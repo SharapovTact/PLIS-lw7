@@ -1,0 +1,12 @@
+xst -intstyle ise -ifn "D:/Study/PLIS/lw7/lw7_3_1/scheme.xst" -ofn "D:/Study/PLIS/lw7/lw7_3_1/scheme.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 scheme.ngc scheme.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o scheme_map.ncd scheme.ngd scheme.pcf 
+par -w -intstyle ise -ol high -mt off scheme_map.ncd scheme.ncd scheme.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml scheme.twx scheme.ncd -o scheme.twr scheme.pcf 
+bitgen -intstyle ise -f scheme.ut scheme.ncd 
+xst -intstyle ise -ifn "D:/Study/PLIS/lw7/lw7_3_1/scheme.xst" -ofn "D:/Study/PLIS/lw7/lw7_3_1/scheme.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc config.ucf -p xc6slx16-csg324-3 scheme.ngc scheme.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o scheme_map.ncd scheme.ngd scheme.pcf 
+par -w -intstyle ise -ol high -mt off scheme_map.ncd scheme.ncd scheme.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml scheme.twx scheme.ncd -o scheme.twr scheme.pcf -ucf config.ucf 
+bitgen -intstyle ise -f scheme.ut scheme.ncd 

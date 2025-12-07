@@ -1,0 +1,47 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : scheme.vf
+// /___/   /\     Timestamp : 12/07/2025 12:14:25
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog D:/Study/PLIS/lw7_3/scheme.vf -w D:/Study/PLIS/lw7_3/scheme.sch
+//Design Name: scheme
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module scheme(I, 
+              sw, 
+              led0, 
+              O);
+
+    input I;
+    input [0:3] sw;
+   output led0;
+   output O;
+   
+   wire XLXN_5;
+   wire XLXN_7;
+   
+   OR2B1  XLXI_1 (.I0(sw[1]), 
+                 .I1(sw[0]), 
+                 .O(XLXN_5));
+   AND2B1  XLXI_2 (.I0(sw[2]), 
+                  .I1(XLXN_5), 
+                  .O(XLXN_7));
+   OR2  XLXI_3 (.I0(sw[3]), 
+               .I1(XLXN_7), 
+               .O(led0));
+   BUF  XLXI_4 (.I(I), 
+               .O(O));
+endmodule

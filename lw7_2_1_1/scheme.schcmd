@@ -1,0 +1,21 @@
+add autowire 960 560 1168 560 8 -sn=1
+add autowire 1152 544 1168 720 8 -sn=1
+undo
+add autowire 1168 560 1168 1040 8 -sn=1
+name branch at 1168 608 8 sw(0:3) -sn=1
+name branch at 1168 608 8 sw(0:3) -sn=1
+undo
+undo
+name branch at 1040 560 8 sw(0:3) -sn=1
+name branch at 1040 560 8 sw(0:3) -sn=1
+add iomarker 960 560 0 Unknown Unknown -sn=1
+add bustap 1168 640 1264 640 -sn=1
+select figure at 1256 597 8 -branches -sn=1
+select figure at 1187 640 8 -branches -sn=1
+delete selection -sn=1
+select figure at 1535 776 8 -branches -sn=1
+add instance or2b1 1360 768 R0 -sn=1
+add bustap 1168 640 1264 640 -sn=1
+add bustap 1168 704 1264 704 -sn=1
+add autowire 1264 640 1360 640 8 -sn=1
+add autowire 1360 704 1264 704 8 -sn=1

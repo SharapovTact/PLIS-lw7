@@ -1,0 +1,6 @@
+NET "sw<0>" LOC="T10";
+NET "sw<1>" LOC="T9";
+NET "sw<2>" LOC="V9";
+NET "sw<3>" LOC="M8";
+
+NET "led" LOC="U16";

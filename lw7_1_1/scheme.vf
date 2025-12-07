@@ -1,0 +1,56 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : scheme.vf
+// /___/   /\     Timestamp : 12/05/2025 15:36:02
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog D:/Study/PLIS/lw7_task1/scheme.vf -w D:/Study/PLIS/lw7_task1/scheme.sch
+//Design Name: scheme
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module scheme(btn1, 
+              btn2, 
+              btn3, 
+              btn4, 
+              sw, 
+              led);
+
+    input btn1;
+    input btn2;
+    input btn3;
+    input btn4;
+    input [7:0] sw;
+   output [0:5] led;
+   
+   
+   AND2  XLXI_1 (.I0(btn2), 
+                .I1(btn1), 
+                .O(led[5]));
+   NAND2  XLXI_2 (.I0(btn4), 
+                 .I1(btn3), 
+                 .O(led[4]));
+   OR2  XLXI_4 (.I0(sw[6]), 
+               .I1(sw[7]), 
+               .O(led[3]));
+   NOR2  XLXI_5 (.I0(sw[4]), 
+                .I1(sw[5]), 
+                .O(led[2]));
+   XOR2  XLXI_6 (.I0(sw[2]), 
+                .I1(sw[3]), 
+                .O(led[1]));
+   XNOR2  XLXI_7 (.I0(sw[0]), 
+                 .I1(sw[1]), 
+                 .O(led[0]));
+endmodule

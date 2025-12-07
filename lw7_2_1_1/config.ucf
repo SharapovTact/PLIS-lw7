@@ -3,4 +3,4 @@ NET "sw<1>" LOC="T9";
 NET "sw<2>" LOC="V9";
 NET "sw<3>" LOC="M8";
 
-NET "led0" LOC="U16";
+NET "led" LOC="U16";

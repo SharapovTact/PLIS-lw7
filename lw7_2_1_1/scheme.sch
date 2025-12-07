@@ -13,13 +13,9 @@
         <signal name="sw(2)" />
         <signal name="XLXN_7" />
         <signal name="sw(3)" />
-        <signal name="led0" />
-        <signal name="I" />
-        <signal name="O" />
+        <signal name="led" />
         <port polarity="Input" name="sw(0:3)" />
-        <port polarity="Output" name="led0" />
-        <port polarity="Input" name="I" />
-        <port polarity="Output" name="O" />
+        <port polarity="Output" name="led" />
         <blockdef name="or2b1">
             <timestamp>2000-1-1T10:10:10</timestamp>
             <line x2="32" y1="-64" y2="-64" x1="0" />
@@ -54,14 +50,6 @@
             <arc ex="112" ey="-144" sx="192" sy="-96" r="88" cx="116" cy="-56" />
             <line x2="48" y1="-48" y2="-48" x1="112" />
         </blockdef>
-        <blockdef name="buf">
-            <timestamp>2000-1-1T10:10:10</timestamp>
-            <line x2="64" y1="-32" y2="-32" x1="0" />
-            <line x2="128" y1="-32" y2="-32" x1="224" />
-            <line x2="128" y1="0" y2="-32" x1="64" />
-            <line x2="64" y1="-32" y2="-64" x1="128" />
-            <line x2="64" y1="-64" y2="0" x1="64" />
-        </blockdef>
         <block symbolname="or2b1" name="XLXI_1">
             <blockpin signalname="sw(1)" name="I0" />
             <blockpin signalname="sw(0)" name="I1" />
@@ -75,11 +63,7 @@
         <block symbolname="or2" name="XLXI_3">
             <blockpin signalname="sw(3)" name="I0" />
             <blockpin signalname="XLXN_7" name="I1" />
-            <blockpin signalname="led0" name="O" />
-        </block>
-        <block symbolname="buf" name="XLXI_4">
-            <blockpin signalname="I" name="I" />
-            <blockpin signalname="O" name="O" />
+            <blockpin signalname="led" name="O" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
@@ -132,18 +116,9 @@
             <wire x2="1600" y1="768" y2="832" x1="1600" />
             <wire x2="1936" y1="768" y2="768" x1="1600" />
         </branch>
-        <branch name="led0">
+        <branch name="led">
             <wire x2="2224" y1="736" y2="736" x1="2192" />
         </branch>
-        <iomarker fontsize="28" x="2224" y="736" name="led0" orien="R0" />
-        <instance x="1472" y="1008" name="XLXI_4" orien="R0" />
-        <branch name="I">
-            <wire x2="1472" y1="976" y2="976" x1="1440" />
-        </branch>
-        <iomarker fontsize="28" x="1440" y="976" name="I" orien="R180" />
-        <branch name="O">
-            <wire x2="1728" y1="976" y2="976" x1="1696" />
-        </branch>
-        <iomarker fontsize="28" x="1728" y="976" name="O" orien="R0" />
+        <iomarker fontsize="28" x="2224" y="736" name="led" orien="R0" />
     </sheet>
 </drawing>
